@@ -1,16 +1,19 @@
-const button = document.querySelector('button');
-const popup = document.querySelector('.popup-wrapper');
-const close = document.querySelector('.popup-close');
+const clock = document.querySelector('.clock');
 
-button.addEventListener('click', () => {
-    popup.style.display = 'block';
-});
+const tick = () => {
+    const now = new Date();
 
-close.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
+    const h = now.getHours();
+    const m = now.getMinutes();
+    const s = now.getSeconds();
 
-popup.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
+    const html = `
+    <span>${h}</span> :
+    <span>${m}</span> :
+    <span>${s}</span>
+    `;
 
+    clock.innerHTML = html;
+}
+
+setInterval(tick, 1000);
