@@ -8,20 +8,21 @@
 </head>
 
 <body>
-    <ul class="listNode">
-        <li>a</li>
-        <li>b</li>
-        <li>c</li>
-        <li>d</li>
-    </ul>
-
+    <div class="parentNode">
+        <ul class="listNode">
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>d</li>
+        </ul>
+    </div>
     <button type="button" class="firstButton" onclick='removingFirstChild()'>Clicking this will remove the first
         child</button>
     <button type="button" class="secondButton" onclick="removingAllChildren()">Clicking this will remove all the
         children</button>
     <button type="button" class="thirdButton" onclick="removingAll()">Clicking this will remove UL with all the
         children</button>
-
+    <button type="button" class="resetAll" onclick="location.reload()"> Reset</button>
 
     <script>
         const listNode = document.querySelector('.listNode')
@@ -38,6 +39,10 @@
 
         function removingAll() {
             listNode.remove();
+        }
+
+        function resetUL() {
+            location.reload();
         }
 
     </script>
