@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="listNode">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ul>
+
+    <button type="button" class="firstButton" onclick='removingFirstChild()'>Clicking this will remove the first
+        child</button>
+    <button type="button" class="secondButton" onclick="removingAllChildren()">Clicking this will remove all the
+        children</button>
+    <button type="button" class="thirdButton" onclick="removingAll()">Clicking this will remove UL with all the
+        children</button>
+
+
+    <script>
+        const listNode = document.querySelector('.listNode')
+
+        function removingFirstChild() {
+            listNode.removeChild(listNode.firstElementChild);
+        }
+
+        function removingAllChildren() {
+            while (listNode.firstChild) {
+                listNode.removeChild(listNode.firstChild);
+            }
+        }
+
+        function removingAll() {
+            listNode.remove();
+        }
+
+    </script>
+</body>
+
+</html>
